@@ -1,0 +1,59 @@
+body {
+  background-color: #ccc;
+  font-family: "Lato", sans-serif;
+}
+
+nav {
+  background-color: #fff;
+}
+
+nav ul li:last-child {
+  background: #FE5F1E;
+}
+
+nav ul li:last-child:hover {
+  background: #b23301;
+}
+
+.doit {
+  background: #FE5F1E;
+}
+
+.btn-primary {
+  background: #FE5F1E;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background: #b23301;
+}
+
+.menu {
+  background-color: #F8F8F8;
+}
+
+.menu button {
+  border: 2px solid #FE5F1E;
+}
+
+section.cart {
+  background: #F8F8F8;
+}
+
+section.cart .amount {
+  color: #FE5F1E;
+}
+
+section.login {
+  background: #F8F8F8;
+  min-height: calc(100vh - 86px);
+}
+
+section.login a {
+  color: #FE5F1E;
+}
+
+section.login a:hover {
+  color: #b23301;
+}
+

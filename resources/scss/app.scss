@@ -1,0 +1,60 @@
+@import './varibles';
+
+body {
+    background-color: $gray;
+    font-family: 'Lato', sans-serif;
+}
+
+nav {
+    background-color: $pure;
+}
+
+nav ul li:last-child {
+    background: $primary;
+
+    &:hover {
+        background: $primary-hover;
+    }
+}
+
+.doit {
+    background: $primary;
+}
+
+.btn-primary {
+    background: $primary;
+    transition: $smooth;
+
+    &:hover {
+        background: $primary-hover;
+    }
+}
+
+.menu {
+    background-color: $secondary;
+}
+
+.menu button {
+    border: 2px solid $primary;
+}
+
+section.cart {
+    background: $secondary;
+
+    .amount {
+        color: $primary;
+    }
+}
+
+section.login {
+    background: $secondary;
+    min-height: calc(100vh - 86px);
+
+    a {
+        color: $primary;
+
+        &:hover {
+            color: $primary-hover;
+        }
+    }
+}
