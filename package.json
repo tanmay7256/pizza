@@ -14,10 +14,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.27.2",
+    "connect-mongo": "^3.2.0",
+    "dotenv": "^16.0.1",
     "ejs": "^3.1.7",
     "express": "^4.17.3",
     "express-ejs-layouts": "^2.5.1",
-    "laravel-mix": "^5.0.4"
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.3",
+    "laravel-mix": "^5.0.4",
+    "mongoose": "^6.4.4",
+    "noty": "^3.2.0-beta-deprecated"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",

@@ -13,117 +13,29 @@
 <section class="menu py-8">
     <h1 class="container mx-auto text-xl font-bold mb-8">All Pizzas</h1>
     <div class="container mx-auto grid grid-cols-4">
-        <div class="mx-auto  mb-8">
-            <img class="w-28 mx-auto mb-4" src="/images/pizza.png" alt="">
-            <div class="text-center">
-                <div class="text-lg mb-2">Margerita</div>
-                <div class="text-xs mb-2">Small</div>
-                <div class="flex items-center justify-around">
-                    <div class=" mr-8 text-lg font-bold">Rs 250</div>
-                    <button class="rounded-full px-4 py-1 text-sm">
-                        <span class="mr-1">+</span>
-                        <span>ADD</span>
-                    </button>
+        <% pizzas %>
+            <% pizzas.forEach((pizza)=>{ %>
+                <div class="mx-auto  mb-8">
+                    <img class="w-28 mx-auto mb-4" src="/images/<%= pizza.image%>" alt="">
+                    <div class="text-center">
+                        <div class="text-lg mb-2">
+                            <%= pizza.name%>
+                        </div>
+                        <div class="text-xs mb-2">
+                            <%= pizza.size%>
+                        </div>
+                        <div class="flex items-center justify-around">
+                            <div class=" mr-8 text-lg font-bold">Rs <%= pizza.price%>
+                            </div>
+                            <button data-pizza="<%= JSON.stringify(pizza) %>"
+                                class="addtocartbutton rounded-full px-4 py-1 text-sm btn-primary">
+                                <span class="mr-1">+</span>
+                                <span>ADD</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="mx-auto  mb-8">
-            <img class="w-28 mx-auto mb-4" src="/images/pizza.png" alt="">
-            <div class="text-center">
-                <div class="text-lg mb-2">Margerita</div>
-                <div class="text-xs mb-2">Small</div>
-                <div class="flex items-center justify-around">
-                    <div class=" mr-8 text-lg font-bold">Rs 250</div>
-                    <button class="rounded-full px-4 py-1 text-sm">
-                        <span class="mr-1">+</span>
-                        <span>ADD</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="mx-auto  mb-8">
-            <img class="w-28 mx-auto mb-4" src="/images/pizza.png" alt="">
-            <div class="text-center">
-                <div class="text-lg mb-2">Margerita</div>
-                <div class="text-xs mb-2">Small</div>
-                <div class="flex items-center justify-around">
-                    <div class=" mr-8 text-lg font-bold">Rs 250</div>
-                    <button class="rounded-full px-4 py-1 text-sm">
-                        <span class="mr-1">+</span>
-                        <span>ADD</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="mx-auto  mb-8">
-            <img class="w-28 mx-auto mb-4" src="/images/pizza.png" alt="">
-            <div class="text-center">
-                <div class="text-lg mb-2">Margerita</div>
-                <div class="text-xs mb-2">Small</div>
-                <div class="flex items-center justify-around">
-                    <div class=" mr-8 text-lg font-bold">Rs 250</div>
-                    <button class="rounded-full px-4 py-1 text-sm">
-                        <span class="mr-1">+</span>
-                        <span>ADD</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="mx-auto  mb-8">
-            <img class="w-28 mx-auto mb-4" src="/images/pizza.png" alt="">
-            <div class="text-center">
-                <div class="text-lg mb-2">Margerita</div>
-                <div class="text-xs mb-2">Small</div>
-                <div class="flex items-center justify-around">
-                    <div class=" mr-8 text-lg font-bold">Rs 250</div>
-                    <button class="rounded-full px-4 py-1 text-sm">
-                        <span class="mr-1">+</span>
-                        <span>ADD</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="mx-auto  mb-8">
-            <img class="w-28 mx-auto mb-4" src="/images/pizza.png" alt="">
-            <div class="text-center">
-                <div class="text-lg mb-2">Margerita</div>
-                <div class="text-xs mb-2">Small</div>
-                <div class="flex items-center justify-around">
-                    <div class=" mr-8 text-lg font-bold">Rs 250</div>
-                    <button class="rounded-full px-4 py-1 text-sm">
-                        <span class="mr-1">+</span>
-                        <span>ADD</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="mx-auto  mb-8">
-            <img class="w-28 mx-auto mb-4" src="/images/pizza.png" alt="">
-            <div class="text-center">
-                <div class="text-lg mb-2">Margerita</div>
-                <div class="text-xs mb-2">Small</div>
-                <div class="flex items-center justify-around">
-                    <div class=" mr-8 text-lg font-bold">Rs 250</div>
-                    <button class="rounded-full px-4 py-1 text-sm">
-                        <span class="mr-1">+</span>
-                        <span>ADD</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="mx-auto  mb-8">
-            <img class="w-28 mx-auto mb-4" src="/images/pizza.png" alt="">
-            <div class="text-center">
-                <div class="text-lg mb-2">Margerita</div>
-                <div class="text-xs mb-2">Small</div>
-                <div class="flex items-center justify-around">
-                    <div class=" mr-8 text-lg font-bold">Rs 250</div>
-                    <button class="rounded-full px-4 py-1 text-sm">
-                        <span class="mr-1">+</span>
-                        <span>ADD</span>
-                    </button>
-                </div>
-            </div>
-        </div>
+                <% })%>
     </div>
+
 </section>
