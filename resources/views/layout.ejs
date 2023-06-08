@@ -7,32 +7,44 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/css/app.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 
 <body>
-    <nav class="py-4">
-        <div class="container mx-auto flex items-center justify-between">
-            <div class px-4><img src="/images/logo.png" alt=""></div>
+    <nav class="py-4 ">
+        <div class="box-container mx-auto flex items-center justify-between p-4">
+            <a href="/"><img src="/images/logo.png" alt="logo"></a>
             <div>
                 <ul class="flex items-center">
-                    <li class="ml-4"><a href="#">Menu</a></li>
-                    <li class="ml-4"><a href="#">offers</a></li>
-                    <li class="ml-4"><a href="/register">register</a></li>
-                    <li class="ml-4"><a href="/login">login</a></li>
-                    <li class="ml-4 rounded-xl text-white font-bold"><a href="/cart"
-                            class="inline-block py-2 px-4 flex">
-                            <span class="pr-2" id="add_to_cart">
-                                <%= session.cart ? session.cart.totalqty : "" %>
-                            </span>
-                            <img src="/images/cart.png" alt="">
-                        </a>
-                    </li>
+                    <li class="ml-4"><a href="/">Menu</a></li>
+                    <% if(user) {%>
+                        <li class="ml-4"><a href=<%=user.role=="customer" ? "/customers/orders" : "/admin/orders"
+                                %>>orders</a></li>
+                        <li class="ml-6">
+                            <form id="logout" action="/logout" method="POST">
+                                <a onclick="document.getElementById('logout').submit()" href="#">Logout</a>
+                            </form>
+                        </li>
+                        <% } else { %>
+                            <li class="ml-6"><a href="/register">Register</a></li>
+                            <li class="ml-6"><a href="/login">Login</a></li>
+                            <% } %>
+                                <li class="ml-4 rounded-xl text-white font-bold"><a href="/cart"
+                                        class="inline-block py-2 px-4 flex">
+                                        <span class="pr-2" id="add_to_cart">
+                                            <%= session.cart ? session.cart.totalqty : "" %>
+                                        </span>
+                                        <img src="/images/cart.png" alt="">
+                                    </a>
+                                </li>
                 </ul>
             </div>
         </div>
     </nav>
     <%- body %>
+        <script src="/socket.io/socket.io.js"></script>
         <script src="/js/app.js"></script>
 </body>
 
