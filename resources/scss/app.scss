@@ -7,6 +7,10 @@
     margin: auto;
 }
 
+.contains_ordertable {
+    min-height: calc(100vh - 86px);
+}
+
 body {
     background-color: $gray;
     font-family: 'Lato', sans-serif;
