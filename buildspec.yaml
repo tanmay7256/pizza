@@ -1,0 +1,29 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo "Install phase - Install Node.js dependencies"
+      - npm install
+      - echo "Install MongoDB"
+      - sudo yum install -y mongodb-org
+
+  pre_build:
+    commands:
+      - echo "Pre-build phase - Run any pre-build tasks, if needed"
+      # Add commands for any pre-build tasks here
+
+  build:
+    commands:
+      - echo "Build phase - Run development build"
+
+  post_build:
+    commands:
+      - echo "Post-build phase - Run any post-build tasks, if needed"
+      # Add commands for any post-build tasks here
+
+artifacts:
+  files: 
+    - '**/*'  # Include all files in the build artifacts
