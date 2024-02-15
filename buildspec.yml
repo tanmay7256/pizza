@@ -7,8 +7,6 @@ phases:
     commands:
       - echo "Install phase - Install Node.js dependencies"
       - npm install
-      - echo "Install MongoDB"
-      - sudo yum install -y mongodb-org
 
   pre_build:
     commands:
